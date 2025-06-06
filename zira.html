@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tentang Zira</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 0 15px;
+      color: #800040;
+      background: #ffe6f0;
+      position: relative;
+      overflow-x: hidden;
+    }
+    h1 {
+      text-align: center;
+      color: #cc0066;
+      margin-bottom: 25px;
+    }
+    .gallery {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+    .gallery img {
+      max-width: 48%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(204, 0, 102, 0.3);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .text {
+      font-size: 1.1em;
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 25px;
+      white-space: normal;
+    }
+    .typing-effect {
+      border-right: 2px solid #cc0066;
+      white-space: pre-wrap;
+      display: inline-block;
+      overflow: hidden;
+      font-weight: 600;
+      color: #cc0066;
+      min-height: 5em;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+    /* Emoji pink love di pojok */
+    .corner-emoji {
+      position: fixed;
+      font-size: 48px;
+      z-index: 9999;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tentang Zira</h1>
+
+<div class="gallery">
+  <img src="https://files.catbox.moe/e850es.jpg" alt="Foto Zira 1" />
+  <img src="https://files.catbox.moe/sc1pmj.jpg" alt="Foto Zira 2" />
+</div>
+
+<div class="text">
+  aku gak pernah nyangka bisa nemuin seseorang seindah kamu, not just your face, but your whole existence. cara kamu bicara, cara kamu nanggepin sesuatu, bahkan cara kamu diem aja tuh punya caranya sendiri buat bikin aku nyaman. you are beautiful in ways that words can't fully explain. ada kalanya aku cuma liatin kamu
+</div>
+
+<div class="gallery">
+  <img src="https://files.catbox.moe/qc6ls8.jpg" alt="Foto Zira 3" />
+  <img src="https://files.catbox.moe/c9eb1t.jpg" alt="Foto Zira 4" />
+</div>
+
+<div class="typing-effect" id="typing"></div>
+
+<!-- Emoji love pink di pojok -->
+<div class="corner-emoji top-left">💖</div>
+<div class="corner-emoji top-right">💖</div>
+<div class="corner-emoji bottom-left">💖</div>
+<div class="corner-emoji bottom-right">💖</div>
+
+<script>
+  const textToType = ` sambil mikir, “kok bisa ya ada orang se-tenang dan sehangat ini.” kamu itu rumah, kamu itu tempat paling aman buat aku pulang. i love the way you laugh, the way you care even about little things, and how you always try to understand. you're the kind of person yang bisa nyelip di hati siapa pun karena kamu punya energi yang bikin semua orang ngerasa lebih baik. aku bersyukur banget bisa kenal kamu, bisa deket sama kamu, bisa nyayangin kamu sebanyak ini. and i hope i can always be someone who makes you feel seen, heard, and loved, every single day. you're beautiful, inside and out, and i'll never get tired of reminding you that.`;
+
+  const typingElem = document.getElementById('typing');
+  let index = 0;
+
+  function type() {
+    if (index < textToType.length) {
+      typingElem.textContent += textToType.charAt(index);
+      index++;
+      setTimeout(type, 40);
+    } else {
+      typingElem.style.borderRight = 'none';
+    }
+  }
+
+  setTimeout(type, 1000);
+</script>
+
+</body>
+</html>
